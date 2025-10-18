@@ -92,11 +92,12 @@ public static class CommandLineParser
                 var arguments = new List<string>();
                 for (int i = 0; i < args.Length; i++)
                 {
+                    var isBoolProperty = property.PropertyType == typeof(bool);
                     if (!args[i].StartsWith("-"))
                     {
                         arguments.Add(args[i]);
                     }
-                    else if (i + 1 < args.Length && !args[i + 1].StartsWith("-"))
+                    else if (isBoolProperty && i + 1 < args.Length && !args[i + 1].StartsWith("-"))
                     {
                         i++;
                     }

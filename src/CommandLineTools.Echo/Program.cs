@@ -4,7 +4,7 @@ namespace CommandLineTools.Echo;
 
 public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         var options = CommandLineParser.Parse<EchoOptions>(args);
         var text = string.Join(" ", options.Arguments);
