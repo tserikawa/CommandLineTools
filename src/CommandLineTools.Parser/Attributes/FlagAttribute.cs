@@ -14,6 +14,11 @@ public class FlagAttribute : Attribute
     public string? ShortName { get; set; }
 
     /// <summary>
+    /// ヘルプテキスト
+    /// </summary>
+    public string? Help{ get; set; }
+
+    /// <summary>
     /// コンストラクタ
     /// </summary>
     /// <param name="longName">正式名称</param>

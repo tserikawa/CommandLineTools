@@ -1,4 +1,5 @@
-﻿using CommandLineTools.Parser;
+﻿using System.Reflection;
+using CommandLineTools.Parser;
 
 namespace CommandLineTools.Echo;
 
@@ -8,7 +9,15 @@ public class Program
     {
         var options = CommandLineParser.Parse<EchoOptions>(args);
         var text = string.Join(" ", options.Arguments);
-        if(options.NoNewline)
+
+        if (options.ShowHelp)
+        {
+            var programName = Assembly.GetExecutingAssembly()?.GetName().Name;
+            Console.WriteLine(CommandLineParser.GenerateHelp<EchoOptions>(programName));
+            return;
+        }
+
+        if (options.NoNewline)
         {
             Console.Write(text);
         }

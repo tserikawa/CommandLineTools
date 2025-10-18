@@ -5,6 +5,7 @@
   </ItemGroup>
 
   <PropertyGroup>
+    <AssemblyName>echo</AssemblyName>
     <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
