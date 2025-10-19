@@ -116,7 +116,7 @@ public static class CommandLineParser
         var result = new StringBuilder();
 
         // Usage行
-        programName = programName ?? "app";
+        programName ??= "app";
         result.AppendLine($"Usage: {programName} [OPTIONS] [ARGUMENTS...]");
         result.AppendLine();
 
